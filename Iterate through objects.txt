@@ -1,0 +1,44 @@
+import React from 'react';
+import Prop from "./prop.jpg"
+import "./style.css"
+
+const books=[
+{
+    img: "This is the first image",
+    title: "This is a beautiful story",
+    author: "AyyBee The Coolest",
+}
+,
+{
+    img : "This is the second Image",
+    title: "I love programming ",
+    author: "AyyBee The Best Programmer",
+},
+];
+
+const names = ["ayybee", "coolest", "ever"];
+const newNames=names.map((names) => {
+   return console.log(names);
+});
+console.log(names);
+function BookList(){
+    return(
+        <section>
+            {names}
+          </section>
+    );
+}
+
+function Book(props){
+    console.log(props);
+    return(
+        <article className="book">
+            <h1>{props.author}</h1>
+            <h5>{props.title}</h5>
+            <h6>{props.img}</h6>
+            
+        </article>
+    );
+}
+
+export default BookList

@@ -1,0 +1,43 @@
+import React from 'react';
+import Prop from "./prop.jpg"
+import "./style.css"
+
+const books=[
+{
+    id:1,
+    img: "This is the first image",
+    title: "This is a beautiful story",
+    author: "AyyBee The Coolest",
+}
+,
+{
+    id:2,
+    img : "This is the second Image Bro",
+    title: "I love programming ",
+    author: "AyyBee The Best Programmer",
+}, 
+];
+
+function BookList(){
+    return(
+        <section>
+           {books.map((book) => {
+               return <Book  key={book.id} {...book}></Book>
+           }) }
+          </section>
+    );
+}
+
+function Book({img,title,author}){
+    // const {img,title,author} = props;
+    return(
+        <article className="book">
+            <h1>{author}</h1>
+            <h5>{title}</h5>
+            <h6>{img}</h6>
+            
+        </article>
+    );
+}
+
+export default BookList

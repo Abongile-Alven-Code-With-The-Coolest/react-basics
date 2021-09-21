@@ -1,0 +1,56 @@
+import React from 'react';
+import Prop from "./prop.jpg"
+import "./style.css"
+
+const firstBook = {
+    img: "This is the first image",
+    title: "This is a beautiful story",
+    author: "AyyBee The Coolest",
+};
+
+const secondBook={
+    img : "This is the second Image",
+    title: "I love programming ",
+    author: "AyyBee The Best Programmer",
+};
+
+function BookList(){
+    return(
+        <section>
+            <Book 
+            img={firstBook.img}
+            title={firstBook.title}
+            author={firstBook.author}
+            >
+                <p>
+                    <button onclick="openNv()" className="submit_btn">Buy Book</button>
+
+                </p>
+                </Book>
+
+
+            
+            <Book 
+            img={secondBook.img}
+            title={secondBook.title}
+            author={secondBook.author}
+            />
+          </section>
+    );
+}
+
+function Book(props){
+    console.log(props);
+    return(
+        <article className="book">
+            <h1>{props.author}</h1>
+            <h5>{props.title}</h5>
+            <h6>{props.img}</h6>
+            <p>
+            {props.children}
+            </p>
+        </article>
+    );
+}
+
+export default BookList

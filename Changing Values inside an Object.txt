@@ -1,0 +1,28 @@
+import React, {useState} from 'react';
+import "./style.css"
+
+const UseStateBasics = () => {
+    const [person,setPerson] = useState({
+        name:'peter',
+        age: 22,
+        message:'random message',
+
+    });
+
+    const changeMessage = () => {
+        setPerson({...person, message:"Hello World"})
+    }
+
+    return (
+        <div className="container">
+            <h2>{person.name}</h2>
+            <h2>{person.age}</h2>
+            <h2>{person.message}</h2>
+            <button onClick={changeMessage} type="button" 
+            className="btn">Change Message</button>
+        </div>
+    );
+    };
+
+export default UseStateBasics;
+

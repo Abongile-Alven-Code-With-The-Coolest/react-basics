@@ -1,0 +1,31 @@
+import React from 'react';
+import "./style.css"
+import { useState } from 'react';
+
+
+const UseStateBasics = () => {
+    
+    const [text, setText] = useState('random test title');
+    
+    const handleClick = () =>{
+        if(text === "random test title"  )
+        {
+            setText("Hellow People ");
+        }
+        else{
+            setText("random test title");
+        }
+
+    }
+
+    return(
+        <React.Fragment>
+            <h1>{text}</h1>
+            <button onClick={handleClick} type="button" className="btn">Change Name</button>
+        </React.Fragment>
+
+    );
+}
+
+export default UseStateBasics
+

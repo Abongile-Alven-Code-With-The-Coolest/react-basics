@@ -1,0 +1,30 @@
+import React, {useState} from 'react';
+import "./style.css"
+
+const UseStateBasics = () =>{
+
+    const [value, setValue] = useState(0);
+
+    const reset = () => {
+        setValue(0);
+    }
+    const increase = () => {
+        setValue(value+1)
+    }
+    const decrease = () => {
+        setValue(value-1)
+    }
+
+    return (
+        <div className="container">
+            <h1>{value}</h1>
+
+            <button onClick={decrease} className="btn" type="button">Decrease</button>
+            <button onClick={reset} className="btn" type="button">Reset</button>
+            <button onClick={increase} className="btn" type="button">Increase</button>
+        </div>
+    );
+}
+
+export default UseStateBasics;
+
